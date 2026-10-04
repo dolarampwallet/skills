@@ -1,6 +1,6 @@
 ---
-name: send-payouts
-description: "Send stablecoin payouts with the dolaramp API using POST /hotwallet/withdraw: idempotency keys, the 200 confirmed and 202 pending answers, withdraw.confirmed and withdraw.failed webhooks, insufficient_balance, allow_partial and the one-at-a-time rule on TRON. Use when: building withdrawals, mass payouts, an off-ramp or a payout queue on dolaramp, or handling a payout that timed out or failed."
+name: send-stablecoin-payouts
+description: "Send stablecoin payouts with the dolaramp API using POST /hotwallet/withdraw: idempotency keys, the 200 confirmed and 202 pending answers, withdraw.confirmed and withdraw.failed webhooks, insufficient_balance, allow_partial and the one-at-a-time rule on TRON. Use when: building withdrawals, mass payouts, an off-ramp or a payout queue on dolaramp, or handling a payout that timed out or failed. Also for requests in Portuguese or Spanish such as \"saque em USDT\", \"pagamento em massa em stablecoin\", \"retiros en USDT\", \"pagos masivos\"."
 ---
 
 ## Overview
@@ -79,7 +79,7 @@ Subscribe to `withdraw.confirmed` and `withdraw.failed`. `data` carries `operati
 - **What can be sent** is `balance − accrued fees − network fee`. Size payouts from `available` in the error body, or from `GET /me` (`accrued_fees_usd`).
 - **`allow_partial: true`** sends what fits instead of refusing. The response and the webhook then carry `recipient_receives` and `capped_for_fees: true`. Without the flag a payout is never sent partially. Only use it when the user explicitly wants "send what is available".
 
-See the `tron-gasless` skill for the fee model.
+See the `usdt-tron-gasless` skill for the fee model.
 
 ## Common mistakes
 

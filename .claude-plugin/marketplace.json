@@ -4,14 +4,14 @@
     "name": "dolaramp"
   },
   "metadata": {
-    "description": "dolaramp's skills for building stablecoin payments with Claude.",
-    "version": "1.0.0"
+    "description": "dolaramp's skills for building stablecoin payment gateways with Claude.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "dolaramp",
       "source": "./",
-      "description": "Build stablecoin payments on the dolaramp API: deposit addresses, webhooks, gasless sweeps, payouts, USDC bridging and reconciliation."
+      "description": "Build a stablecoin payment gateway with Claude. Accept USDT, USDC and PYUSD, pay out, and reconcile on Solana, TRON, TON, Base and Arbitrum through the dolaramp API: deposit addresses per customer, signed webhooks, gasless sweeps and payouts, USDT on TRON without TRX, USDC bridging."
     }
   ]
 }

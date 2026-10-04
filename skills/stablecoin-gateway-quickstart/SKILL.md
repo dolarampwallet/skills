@@ -1,6 +1,6 @@
 ---
-name: get-started
-description: "Start an integration with the dolaramp API: authentication, creating a hotwallet, handling the one-time wallet_secret, API key scopes, amounts in micro-units and the overall receive, sweep and pay out flow. Use when: the user wants to accept or send stablecoins (USDT, USDC, PYUSD) through dolaramp, mentions api.dolaramp.com, a dr_live_ key, a ws_ wallet secret, or asks how the dolaramp API works."
+name: stablecoin-gateway-quickstart
+description: "Start an integration with the dolaramp API: authentication, creating a hotwallet, handling the one-time wallet_secret, API key scopes, amounts in micro-units and the overall receive, sweep and pay out flow. Use when: the user wants to accept or send stablecoins (USDT, USDC, PYUSD) through dolaramp, mentions api.dolaramp.com, a dr_live_ key, a ws_ wallet secret, or asks how the dolaramp API works. Also for requests in Portuguese or Spanish such as \"gateway de pagamento em stablecoin\", \"aceitar USDT no meu sistema\", \"pasarela de pagos con stablecoins\"."
 ---
 
 ## Overview
@@ -81,7 +81,7 @@ const { status, body } = await dolaramp<{ address: string; deposit_address?: str
 
 - One hotwallet per network: a second call answers `409`.
 - **Base and Arbitrum share one address and one secret.** Creating either creates both (`evm_unified: true`). If one already existed, the other is mirrored and no new secret is returned.
-- **TRON** can answer `503` with `reason: gasfree_unavailable` and `retry: true`. Nothing was created; repeat the same call. See the `tron-gasless` skill.
+- **TRON** can answer `503` with `reason: gasfree_unavailable` and `retry: true`. Nothing was created; repeat the same call. See the `usdt-tron-gasless` skill.
 
 ## Check the account
 
@@ -89,11 +89,11 @@ const { status, body } = await dolaramp<{ address: string; deposit_address?: str
 
 ## What to build next
 
-- Deposit addresses and crediting users: `receive-deposits`
-- Webhook endpoint: `verify-webhooks`
-- Consolidation: `sweep-funds`
-- Payouts: `send-payouts`
-- Accounting: `reconcile`
+- Deposit addresses and crediting users: `accept-stablecoin-payments`
+- Webhook endpoint: `verify-payment-webhooks`
+- Consolidation: `sweep-stablecoin-deposits`
+- Payouts: `send-stablecoin-payouts`
+- Accounting: `reconcile-stablecoin-payments`
 
 ## Common mistakes
 

@@ -1,6 +1,6 @@
 ---
-name: reconcile
-description: "Reconcile and account for dolaramp activity: GET /ledger for every on-chain movement with itemized fees, GET /operations for sweeps, withdrawals and bridges by batch, GET /deposits, GET /statement for the monthly export, balances and the webhook delivery log. Use when: building accounting, a back-office report, a daily reconciliation job, a CSV export, or finding out what happened to a specific deposit, sweep or payout."
+name: reconcile-stablecoin-payments
+description: "Reconcile and account for dolaramp activity: GET /ledger for every on-chain movement with itemized fees, GET /operations for sweeps, withdrawals and bridges by batch, GET /deposits, GET /statement for the monthly export, balances and the webhook delivery log. Use when: building accounting, a back-office report, a daily reconciliation job, a CSV export, or finding out what happened to a specific deposit, sweep or payout. Also for requests such as \"conciliação\", \"extrato mensal\", \"conciliación de pagos\"."
 ---
 
 ## Overview
@@ -54,7 +54,7 @@ Withdrawal and bridge responses carry `operation_id`; match on it, or on your `i
 
 ## Deposits
 
-`GET /deposits?limit=` returns `state` (`arriving`, `confirmed`, `failed`), `detected_at`, `confirmed_at`, `address`, `external_ref`, `amount` (micro-units), `amount_usd`, `tx_hash`, `from`. Credit only `confirmed`. See `receive-deposits`.
+`GET /deposits?limit=` returns `state` (`arriving`, `confirmed`, `failed`), `detected_at`, `confirmed_at`, `address`, `external_ref`, `amount` (micro-units), `amount_usd`, `tx_hash`, `from`. Credit only `confirmed`. See `accept-stablecoin-payments`.
 
 ## Monthly statement
 

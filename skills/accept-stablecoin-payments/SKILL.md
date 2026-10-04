@@ -1,11 +1,11 @@
 ---
-name: receive-deposits
-description: "Receive stablecoin deposits with the dolaramp API: generate child wallets as per-customer deposit addresses, tag them with external_ref, tell detected from confirmed, and credit users from the deposit.confirmed webhook or GET /deposits. Use when: building a checkout, a top-up, a gateway or an exchange deposit flow on dolaramp, generating deposit addresses, or deciding when it is safe to release goods."
+name: accept-stablecoin-payments
+description: "Receive stablecoin deposits with the dolaramp API: generate child wallets as per-customer deposit addresses, tag them with external_ref, tell detected from confirmed, and credit users from the deposit.confirmed webhook or GET /deposits. Use when: building a checkout, a top-up, a gateway or an exchange deposit flow on dolaramp, generating deposit addresses, or deciding when it is safe to release goods. Also for requests in Portuguese or Spanish such as \"receber USDT\", \"gerar endereço de depósito\", \"aceptar pagos en USDT o USDC\"."
 ---
 
 ## Overview
 
-A **child wallet** is a deposit address that belongs to your hotwallet. Give one to each customer or each order. Deposits to it are detected and reported to you; later you sweep the child into the hotwallet (see `sweep-funds`).
+A **child wallet** is a deposit address that belongs to your hotwallet. Give one to each customer or each order. Deposits to it are detected and reported to you; later you sweep the child into the hotwallet (see `sweep-stablecoin-deposits`).
 
 Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key`. Amounts are strings in micro-units (6 decimals). The examples assume a `config` object with `apiKey` and `walletSecret`, loaded from your secret store on the server.
 
@@ -52,7 +52,7 @@ An arriving transfer can still disappear. Build the crediting logic on `deposit.
 
 ## Credit from the webhook
 
-Register an endpoint with `POST /webhooks` (see `verify-webhooks` for the signature). The body is `{ "event": "...", "data": { ... } }`. For deposits `data` carries:
+Register an endpoint with `POST /webhooks` (see `verify-payment-webhooks` for the signature). The body is `{ "event": "...", "data": { ... } }`. For deposits `data` carries:
 
 `network`, `token`, `address`, `external_ref`, `amount` (micro-units, string), `amount_usd`, `tx_hash`, `from`, `detected_at`.
 
@@ -83,7 +83,7 @@ A `read` key is enough for polling.
 
 ## After the deposit
 
-The funds sit in the child wallet until you sweep. A common pattern is to call the sweep from the `deposit.confirmed` handler, or in batches on a schedule. See `sweep-funds`.
+The funds sit in the child wallet until you sweep. A common pattern is to call the sweep from the `deposit.confirmed` handler, or in batches on a schedule. See `sweep-stablecoin-deposits`.
 
 ## Common mistakes
 

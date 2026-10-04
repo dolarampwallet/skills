@@ -1,6 +1,6 @@
 ---
 name: bridge-usdc
-description: "Move USDC between Solana, Base and Arbitrum with the dolaramp API: GET /bridge/quote, POST /bridge, the accepted then bridge.confirmed pattern, fees and the minimum, rebalancing your own hotwallets or paying a third party on another network. Use when: rebalancing USDC across networks, paying a supplier on a different chain than the one the customer paid on, or integrating cross-chain USDC transfers on dolaramp."
+description: "Move USDC between Solana, Base and Arbitrum with the dolaramp API: GET /bridge/quote, POST /bridge, the accepted then bridge.confirmed pattern, fees and the minimum, rebalancing your own hotwallets or paying a third party on another network. Use when: rebalancing USDC across networks, paying a supplier on a different chain than the one the customer paid on, or integrating cross-chain USDC transfers on dolaramp. Also for requests such as \"mover USDC entre redes\", \"puente de USDC\"."
 ---
 
 ## Overview

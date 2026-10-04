@@ -1,6 +1,6 @@
 ---
-name: tron-gasless
-description: "Work with USDT on TRON through dolaramp without holding TRX: the gasless deposit_address, the network fee charged in USDT, one-time account activation, fees that accrue and are collected in a batch, the retryable 503 gasfree_unavailable on address creation, and asynchronous sweeps. Use when: integrating USDT TRC-20 with dolaramp, explaining TRON fees, sizing a TRON payout, or handling TRON-specific errors."
+name: usdt-tron-gasless
+description: "Work with USDT on TRON through dolaramp without holding TRX: the gasless deposit_address, the network fee charged in USDT, one-time account activation, fees that accrue and are collected in a batch, the retryable 503 gasfree_unavailable on address creation, and asynchronous sweeps. Use when: integrating USDT TRC-20 with dolaramp, explaining TRON fees, sizing a TRON payout, or handling TRON-specific errors. Also for requests such as \"USDT TRC20 sem TRX\", \"USDT TRC20 sin TRX\"."
 ---
 
 ## Overview
@@ -78,8 +78,8 @@ Consequences for code:
 ## Timing
 
 - **Deposits** are picked up within seconds of the block and reported as detected; `deposit.confirmed` follows when the network confirms, about a minute later. Credit on `deposit.confirmed`.
-- **Sweeps** are asynchronous: each child answers `accepted` with a `trace_id`, then `sweep.confirmed` or `sweep.failed` arrives by webhook and `GET /operations` flips from `pending` to `confirmed`. See `sweep-funds`.
-- **Withdrawals** allow one pending transfer per hotwallet. Run the payout queue serially. See `send-payouts`.
+- **Sweeps** are asynchronous: each child answers `accepted` with a `trace_id`, then `sweep.confirmed` or `sweep.failed` arrives by webhook and `GET /operations` flips from `pending` to `confirmed`. See `sweep-stablecoin-deposits`.
+- **Withdrawals** allow one pending transfer per hotwallet. Run the payout queue serially. See `send-stablecoin-payouts`.
 
 ## Checking a TRON address before paying out
 
