@@ -1,6 +1,6 @@
 ---
 name: accept-stablecoin-payments
-description: "Receive stablecoin deposits with the dolaramp API: generate child wallets as per-customer deposit addresses, tag them with external_ref, tell detected from confirmed, and credit users from the deposit.confirmed webhook or GET /deposits. Use when: building a checkout, a top-up, a gateway or an exchange deposit flow on dolaramp, generating deposit addresses, or deciding when it is safe to release goods. Also for requests in Portuguese or Spanish such as \"receber USDT\", \"gerar endereço de depósito\", \"aceptar pagos en USDT o USDC\"."
+description: "Accept stablecoin payments (USDT, USDC, PYUSD) with the dolaramp API: generate child wallets as per-customer deposit addresses, tag them with external_ref, tell detected from confirmed, and credit users from the deposit.confirmed webhook or GET /deposits. Use when: building a checkout, a top-up, a gateway or an exchange deposit flow on dolaramp, generating deposit addresses, or deciding when it is safe to release goods. Also for requests in Portuguese or Spanish such as \"receber USDT\", \"gerar endereço de depósito\", \"aceptar pagos en USDT o USDC\"."
 ---
 
 ## Overview

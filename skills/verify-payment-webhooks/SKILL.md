@@ -1,6 +1,6 @@
 ---
 name: verify-payment-webhooks
-description: "Receive and verify dolaramp webhooks: register an endpoint, check X-DolaRamp-Signature or the timestamped X-DolaRamp-Signature-V1 over the raw body, refuse replays, de-duplicate by X-DolaRamp-Delivery-Id and handle the retry schedule. Use when: writing a webhook handler for deposit, sweep, withdraw or bridge events from dolaramp, debugging a signature mismatch, or reviewing webhook security. Also for requests such as \"validar webhook de pagamento\", \"verificar firma del webhook\"."
+description: "Verify stablecoin payment webhooks from dolaramp: register an endpoint, check X-DolaRamp-Signature or the timestamped X-DolaRamp-Signature-V1 over the raw body, refuse replays, de-duplicate by X-DolaRamp-Delivery-Id and handle the retry schedule. Use when: writing a webhook handler for deposit, sweep, withdraw or bridge events from dolaramp, debugging a signature mismatch, or reviewing webhook security. Also for requests such as \"validar webhook de pagamento\", \"verificar firma del webhook\"."
 ---
 
 ## Overview

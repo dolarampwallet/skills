@@ -1,6 +1,6 @@
 ---
 name: stablecoin-gateway-quickstart
-description: "Start an integration with the dolaramp API: authentication, creating a hotwallet, handling the one-time wallet_secret, API key scopes, amounts in micro-units and the overall receive, sweep and pay out flow. Use when: the user wants to accept or send stablecoins (USDT, USDC, PYUSD) through dolaramp, mentions api.dolaramp.com, a dr_live_ key, a ws_ wallet secret, or asks how the dolaramp API works. Also for requests in Portuguese or Spanish such as \"gateway de pagamento em stablecoin\", \"aceitar USDT no meu sistema\", \"pasarela de pagos con stablecoins\"."
+description: "Build a stablecoin payment gateway on the dolaramp API (USDT, USDC, PYUSD on Solana, TRON, TON, Base and Arbitrum): authentication, creating a hotwallet, handling the one-time wallet_secret, API key scopes, amounts in micro-units and the overall receive, sweep and pay out flow. Use when: the user wants to accept or send stablecoins (USDT, USDC, PYUSD) through dolaramp, mentions api.dolaramp.com, a dr_live_ key, a ws_ wallet secret, or asks how the dolaramp API works. Also for requests in Portuguese or Spanish such as \"gateway de pagamento em stablecoin\", \"aceitar USDT no meu sistema\", \"pasarela de pagos con stablecoins\"."
 ---
 
 ## Overview

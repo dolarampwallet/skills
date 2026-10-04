@@ -1,6 +1,6 @@
 ---
 name: sweep-stablecoin-deposits
-description: "Consolidate dolaramp child wallets into the hotwallet with POST /sweep: batch sweeps, the fee quote, idempotency keys, per-child results, and the asynchronous accepted then sweep.confirmed pattern on TRON. Use when: moving deposited funds from deposit addresses to the hotwallet, scheduling consolidation, handling below_min_sweep, or reading sweep results and fees. Also for requests such as \"varrer os endereços para a carteira principal\", \"consolidar fondos\"."
+description: "Sweep stablecoin deposits (USDT, USDC, PYUSD) from dolaramp deposit addresses into the hotwallet with POST /sweep: batch sweeps, the fee quote, idempotency keys, per-child results, and the asynchronous accepted then sweep.confirmed pattern on TRON. Use when: moving deposited funds from deposit addresses to the hotwallet, scheduling consolidation, handling below_min_sweep, or reading sweep results and fees. Also for requests such as \"varrer os endereços para a carteira principal\", \"consolidar fondos\"."
 ---
 
 ## Overview

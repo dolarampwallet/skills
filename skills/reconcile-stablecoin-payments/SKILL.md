@@ -1,6 +1,6 @@
 ---
 name: reconcile-stablecoin-payments
-description: "Reconcile and account for dolaramp activity: GET /ledger for every on-chain movement with itemized fees, GET /operations for sweeps, withdrawals and bridges by batch, GET /deposits, GET /statement for the monthly export, balances and the webhook delivery log. Use when: building accounting, a back-office report, a daily reconciliation job, a CSV export, or finding out what happened to a specific deposit, sweep or payout. Also for requests such as \"conciliação\", \"extrato mensal\", \"conciliación de pagos\"."
+description: "Reconcile stablecoin payments and account for dolaramp activity: GET /ledger for every on-chain movement with itemized fees, GET /operations for sweeps, withdrawals and bridges by batch, GET /deposits, GET /statement for the monthly export, balances and the webhook delivery log. Use when: building accounting, a back-office report, a daily reconciliation job, a CSV export, or finding out what happened to a specific deposit, sweep or payout. Also for requests such as \"conciliação\", \"extrato mensal\", \"conciliación de pagos\"."
 ---
 
 ## Overview
