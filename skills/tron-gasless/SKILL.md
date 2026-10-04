@@ -9,7 +9,7 @@ Most USDT moves on TRON, and TRON normally needs TRX for energy. Through dolaram
 
 This changes four things compared with the other networks: the address to show, the fee model, the timing of sweeps, and one retryable error.
 
-Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key`.
+Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key`. The examples assume a `config` object with `apiKey` and `walletSecret`, loaded from your secret store on the server.
 
 ## Addresses
 
@@ -35,7 +35,7 @@ async function createTronChildren(count: number, refs: string[]) {
   for (let attempt = 0; attempt < 5; attempt++) {
     const { status, body } = await dolaramp<any>("/hotwallets/tron/children", {
       method: "POST",
-      body: JSON.stringify({ wallet_secret: process.env.DOLARAMP_WALLET_SECRET, count, external_refs: refs }),
+      body: JSON.stringify({ wallet_secret: config.walletSecret, count, external_refs: refs }),
     });
     if (status === 201) return body.children;
     if (status === 503 && body.retry) { await sleep(2000 * (attempt + 1)); continue; }

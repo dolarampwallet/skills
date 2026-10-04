@@ -7,7 +7,7 @@ description: "Consolidate dolaramp child wallets into the hotwallet with POST /s
 
 Deposits land in child wallets. A **sweep** moves the balance of one token from children into the hotwallet, in batch. dolaramp sponsors the gas; the fee is taken in stablecoin inside the transaction. A child can only ever be swept into its own hotwallet.
 
-Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key` (an `operate` key). Amounts are strings in micro-units (6 decimals).
+Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key` (an `operate` key). Amounts are strings in micro-units (6 decimals). The examples assume a `config` object with `apiKey` and `walletSecret`, loaded from your secret store on the server.
 
 ## Quote first
 
@@ -30,7 +30,7 @@ const { body } = await dolaramp<SweepResponse>("/sweep", {
   body: JSON.stringify({
     network: "solana",
     token: "USDT",
-    wallet_secret: process.env.DOLARAMP_WALLET_SECRET,
+    wallet_secret: config.walletSecret,
     child_addresses: ["ANjK0x...ktZ"],          // optional, up to 20
     idempotency_key: "sweep-2026-10-03-batch-7", // up to 64 chars
   }),

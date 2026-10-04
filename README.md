@@ -38,7 +38,7 @@ There is no sandbox. Test on mainnet with small amounts.
 
 ## Keeping secrets out of the conversation
 
-Never paste an API key or a `wallet_secret` into a chat. The skills tell Claude to read them from environment variables (`DOLARAMP_API_KEY`, `DOLARAMP_WALLET_SECRET`) and to keep them on the server side of your application.
+Never paste an API key or a `wallet_secret` into a chat. The skills tell Claude to load them from your application's own secret store or server-side configuration, and to keep them out of the browser, the logs and the source code.
 
 ## Links
 

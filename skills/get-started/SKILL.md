@@ -38,10 +38,10 @@ Reference: https://dolaramp.com/docs/ (OpenAPI: https://dolaramp.com/docs/openap
 
 Two secrets exist, and neither belongs in source code, logs, a browser or a chat:
 
-- `DOLARAMP_API_KEY`: the `dr_live_...` key. Issued in the panel (https://dolaramp.com/painel/) and by `POST /keys`. The plaintext is shown once.
-- `DOLARAMP_WALLET_SECRET`: the `ws_...` returned when a hotwallet is created. It encrypts the hotwallet key and every child key. dolaramp stores only ciphertext and cannot recover it. Sweep, withdraw, bridge, export and child generation all require it in the request body.
+- **The API key** (`dr_live_...`). Issued in the panel (https://dolaramp.com/painel/) and by `POST /keys`. The plaintext is shown once.
+- **The wallet secret** (`ws_...`), returned when a hotwallet is created. It encrypts the hotwallet key and every child key. dolaramp stores only ciphertext and cannot recover it. Sweep, withdraw, bridge, export and child generation all require it in the request body.
 
-Read both from environment variables on the server. If the user pastes one into the conversation, tell them to rotate it.
+Load both from the application's secret manager or server-side configuration at startup, and pass them in as `config.apiKey` and `config.walletSecret` (the examples in these skills assume that `config` object). If the user pastes one into the conversation, tell them to rotate it.
 
 Keys have a scope. Use the smallest one that works:
 
@@ -57,7 +57,7 @@ export async function dolaramp<T>(path: string, init: RequestInit = {}): Promise
   const res = await fetch(BASE + path, {
     ...init,
     headers: {
-      "X-Api-Key": process.env.DOLARAMP_API_KEY!,
+      "X-Api-Key": config.apiKey,
       "Content-Type": "application/json",
       ...init.headers,
     },

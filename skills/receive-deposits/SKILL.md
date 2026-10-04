@@ -7,7 +7,7 @@ description: "Receive stablecoin deposits with the dolaramp API: generate child 
 
 A **child wallet** is a deposit address that belongs to your hotwallet. Give one to each customer or each order. Deposits to it are detected and reported to you; later you sweep the child into the hotwallet (see `sweep-funds`).
 
-Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key`. Amounts are strings in micro-units (6 decimals).
+Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key`. Amounts are strings in micro-units (6 decimals). The examples assume a `config` object with `apiKey` and `walletSecret`, loaded from your secret store on the server.
 
 ## Generate deposit addresses
 
@@ -19,7 +19,7 @@ const res = await dolaramp<{ children: Array<{ address: string; deposit_address:
   {
     method: "POST",
     body: JSON.stringify({
-      wallet_secret: process.env.DOLARAMP_WALLET_SECRET,
+      wallet_secret: config.walletSecret,
       count: 3,
       external_refs: ["user_100", "user_101", "user_102"],
     }),

@@ -9,7 +9,7 @@ The bridge moves **USDC** from your hotwallet on one network to an address on an
 
 Routes: every pair of `solana`, `base` and `arbitrum`, in both directions. USDC only.
 
-Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key` (an `operate` key). Amounts are strings in micro-units (6 decimals).
+Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key` (an `operate` key). Amounts are strings in micro-units (6 decimals). The examples assume a `config` object with `apiKey` and `walletSecret`, loaded from your secret store on the server.
 
 ## Quote
 
@@ -38,7 +38,7 @@ const { status, body } = await dolaramp<BridgeResponse>("/bridge", {
     from: "base",
     to: "arbitrum",
     amount: "50000000",
-    wallet_secret: process.env.DOLARAMP_WALLET_SECRET,
+    wallet_secret: config.walletSecret,
     idempotency_key: "rebalance-2026-10-03-01",
     // to_address: "0x...",   // omit to land on your own hotwallet on `to`
     // external_ref: "user_100",

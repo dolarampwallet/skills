@@ -7,7 +7,7 @@ description: "Send stablecoin payouts with the dolaramp API using POST /hotwalle
 
 A withdrawal sends a token from the hotwallet to any address. dolaramp sponsors the gas and takes its fee in stablecoin inside the transfer. Children must be swept first: only the hotwallet pays out.
 
-Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key` (an `operate` key). Amounts are strings in micro-units (6 decimals).
+Base URL `https://api.dolaramp.com/v1`, header `X-Api-Key` (an `operate` key). Amounts are strings in micro-units (6 decimals). The examples assume a `config` object with `apiKey` and `walletSecret`, loaded from your secret store on the server.
 
 ## Before sending
 
@@ -27,7 +27,7 @@ const { status, body } = await dolaramp<WithdrawResponse>("/hotwallet/withdraw",
     token: "USDT",
     to: "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin",
     amount: "10000000",
-    wallet_secret: process.env.DOLARAMP_WALLET_SECRET,
+    wallet_secret: config.walletSecret,
     idempotency_key: "payout-inv-10432", // up to 64 chars
     external_ref: "user_100",            // optional, travels on the webhooks
   }),

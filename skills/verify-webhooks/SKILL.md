@@ -9,7 +9,7 @@ dolaramp sends a `POST` with `Content-Type: application/json` and the body `{ "e
 
 ## Register an endpoint
 
-`POST /webhooks` with `{ "url": "https://...", "events": [...] }`. HTTPS only, up to 5 endpoints per account. The response returns `id` and `secret`. **The secret is shown once**: store it as `DOLARAMP_WEBHOOK_SECRET`.
+`POST /webhooks` with `{ "url": "https://...", "events": [...] }`. HTTPS only, up to 5 endpoints per account. The response returns `id` and `secret`. **The secret is shown once**: store it in your secret manager and load it into your app config at startup.
 
 Events:
 
@@ -71,7 +71,7 @@ const app = express();
 
 app.post("/webhooks/dolaramp", express.raw({ type: "application/json" }), async (req, res) => {
   const raw = req.body.toString("utf8");
-  if (!verifyDolaramp(raw, req.headers as Record<string, string>, process.env.DOLARAMP_WEBHOOK_SECRET!)) {
+  if (!verifyDolaramp(raw, req.headers as Record<string, string>, config.webhookSecret)) {
     return res.status(400).json({ error: "invalid_signature" });
   }
 
