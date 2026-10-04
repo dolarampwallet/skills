@@ -1,7 +1,7 @@
 {
   "name": "dolaramp",
   "displayName": "dolaramp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build stablecoin payments on the dolaramp API. Skills for deposit addresses, webhooks, gasless sweeps, payouts, TRON without TRX, USDC bridging and reconciliation across Solana, TRON, TON, Base and Arbitrum.",
   "author": {
     "name": "dolaramp",
@@ -21,5 +21,9 @@
     "solana",
     "gasless",
     "webhooks"
-  ]
+  ],
+  "privacyPolicyUrl": "https://dolaramp.com/privacy/",
+  "termsOfServiceUrl": "https://dolaramp.com/terms/",
+  "supportUrl": "https://dolaramp.com/support/",
+  "documentationUrl": "https://dolaramp.com/docs/"
 }
