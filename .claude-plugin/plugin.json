@@ -1,7 +1,7 @@
 {
   "name": "dolaramp",
   "displayName": "dolaramp",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Build a stablecoin payment gateway with Claude. Accept USDT, USDC and PYUSD, pay out, and reconcile on Solana, TRON, TON, Base and Arbitrum through the dolaramp API: deposit addresses per customer, signed webhooks, gasless sweeps and payouts, USDT on TRON without TRX, USDC bridging.",
   "author": {
     "name": "dolaramp",
