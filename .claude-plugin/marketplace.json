@@ -1,0 +1,17 @@
+{
+  "name": "dolaramp",
+  "owner": {
+    "name": "dolaramp"
+  },
+  "metadata": {
+    "description": "dolaramp's skills for building stablecoin payments with Claude.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "dolaramp",
+      "source": "./",
+      "description": "Build stablecoin payments on the dolaramp API: deposit addresses, webhooks, gasless sweeps, payouts, USDC bridging and reconciliation."
+    }
+  ]
+}
